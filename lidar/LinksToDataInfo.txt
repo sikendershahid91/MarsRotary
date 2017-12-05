@@ -1,0 +1,3 @@
+https://support.scanse.io/hc/en-us/articles/115001437888-Introduction-to-Communication-Protocol
+
+https://support.scanse.io/hc/en-us/articles/115001403947-Parsing-Sensor-Reading-Data

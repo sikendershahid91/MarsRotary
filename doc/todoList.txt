@@ -1,0 +1,18 @@
+[day-date] - [[ ]] - [task] - [assigned] -[due-date] 
+-----------------------------------------------------------
+x - done
+/ - no longer due
++ - postpone
+F || f - fail
+
+MRM = MarsRoverManual 
+module_rm = module reorientation mechanism 
+module_od = module obstacle detection 
+
+Tuesday-3/13 - [x] - correct repo - sikender - Tuesday-3/13
+Tuesday-3/13 - [x] - update design struct in doc/ - sikender - Tuesday-3/13
+Tuesday-3/13 - [ ] - setup makefile for gtest - sikender - Tuesday-3/13
+Tuesday-3/13 - [ ] - setup gyroscope in the $MRM/ - sikender - Tuesday-3/13 
+Tuesday-3/13 - [ ] - upload circuit schematic for the system - aditi - Wednesday-3/14
+Tuesday-3/13 - [ ] - upload updated sketch for $module_rm - alamin - Wednesday-3/14
+Tuesday-3/13 - [ ] - catchup on current design changes - aadil - Wednesday-3/14

@@ -1,0 +1,31 @@
+<archival> 
+
+Test plan 
+
+The end goal for the project in entirety, is to showcase a finalized traversable Mars Rover solution. the final developed prototype will show the capability in detecting objects and elevation differences near bound. the Finalized solution will showcase the ability to recover from any orientation, displayed through reproduced rollover crash from different scenarios.
+
+currently in our design process we are developing different modules for two main prototypes that complete the objectives on hand. Following a process described as Test Driven Development. As we progress through successful testing we continue on to the next major objective. the following is the objective diagram which is our focus for the finalized development. 
+		
+					< figure displaying objective analysis diagram> 
+
+There are three main criterion that we perform for the prototypes we develop, that are Motion testing, Obstacle detection testing, and mechanical reorienting tests. Each of these testing phases contain submodules that require some method of testing which you can observe to see in the following gantt chart that displays a more of broken down version of each prototype. 
+
+					< Gantt chart > 
+					<table > 
+					identifer - name 
+					P1 - prototype 1
+					P2 - prototype 2
+					SP1 - simulated prototype 1
+					SP2 - simulated prototype 2
+					M1 - module 1
+					M2 - module 2
+
+The previous table displays the name of each identifier. 
+For P1 observe the test cases in the gantt chart. You will see that P1 has main objective that it needs to accomplish with specific test cases that need to be successful. P1 is responsible for criterion 1. Power management, motor control and obstacle avoidance essentially dictating motion based on the obstacle detection. 
+
+Another example can be seen form M1, M1 works with LIDAAR. The initial test case for the M1 is setup. After setup, the assert test case which is the object detection in 2D plane about the world Z-axis. 
+
+As we progress through submodule tests, our test plan converges towards integration of the three main criterion.
+
+
+		

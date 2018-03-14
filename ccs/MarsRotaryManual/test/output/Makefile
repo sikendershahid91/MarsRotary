@@ -20,8 +20,9 @@ GTEST_DIR = /home/pintobean/googletest/googletest/googletest
 
 # Where to find user code.
 # USER_DIR = ../samples
-USER_DIR = ..
-TEST_DIR = ../test
+USER_DIR = ../../Reorientation
+TEST_DIR = ../../test
+TEST_OUTPUT = output
 
 
 # Flags passed to the preprocessor.
@@ -34,7 +35,7 @@ CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = Adder_test
+TESTS = Reorientation_test
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -87,13 +88,22 @@ gtest_main.a : gtest-all.o gtest_main.o
 # # 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
 
-# Functions2.o: $(USER_DIR)/Functions2.c $(USER_DIR)/Functions2.h $(GTEST_HEADERS)
-# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/Functions2.c
+# simplify this later .... 
+Reorientation_test: Reorientation.o Reorientation_test.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
-# Adder_test.o: $(TEST_DIR)/Adder_test.cpp \
-#                      $(USER_DIR)/Functions2.h $(GTEST_HEADERS)
-# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/Adder_test.cpp
+Reorientation_test.o: $(TEST_DIR)/Reorientation_test.cpp $(USER_DIR)/Reorientation.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/Reorientation_test.cpp
 
-# Adder_test: Functions2.o Adder_test.o gtest_main.a
-# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+Reorientation.o: $(USER_DIR)/Reorientation.c $(USER_DIR)/Reorientation.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/Reorientation.c
+	# Functions2.o: $(USER_DIR)/Functions2.c $(USER_DIR)/Functions2.h $(GTEST_HEADERS)
+	# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/Functions2.c
+
+	# Adder_test.o: $(TEST_DIR)/Adder_test.cpp \
+	#                      $(USER_DIR)/Functions2.h $(GTEST_HEADERS)
+	# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/Adder_test.cpp
+
+	# Adder_test: Functions2.o Adder_test.o gtest_main.a
+	# 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 

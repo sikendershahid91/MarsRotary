@@ -12,11 +12,11 @@ module_od = module obstacle detection
 
 Thursday-3/1 - [x] - new design concept from the previous designs - alamin - Thursday-3/1
 Saturday-3/3 - [x] - raw data collection through rviz package - aditi/alamin - Monday-3/5
-Saturday-3/10- [x] - get testing working within ccs - sikender - Sunday-3/11
+Saturday-3/10- [x] - get gtesting working within ccs - sikender - Sunday-3/11
 Tuesday-3/13 - [x] - correct repo - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - update design struct in doc/ - sikender - Tuesday-3/13
 Tuesday-3/13 - [ ] - setup makefile for gtest - sikender - Tuesday-3/13
-Tuesday-3/13 - [ ] - setup gyroscope in the $MRM/ - sikender - Tuesday-3/13 
+Tuesday-3/13 - [ ] - setup gyroscope in the $MRM/ - sikender - Wednesday-3/13 
 Tuesday-3/13 - [ ] - upload circuit schematic for the system - aditi - Wednesday-3/14
 Tuesday-3/13 - [ ] - upload updated sketch for $module_rm - alamin - Wednesday-3/14
 Tuesday-3/13 - [ ] - catchup on current design changes - aadil - Wednesday-3/14

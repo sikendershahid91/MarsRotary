@@ -1,0 +1,9 @@
+#ignoring the following files
+*.metadata
+*.jxbrowser-data
+*.launches
+Debug/
+.launches/
+\.config
+\.launches
+.xdchelp

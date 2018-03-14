@@ -2,6 +2,7 @@
 *.metadata
 *.jxbrowser-data
 *.launches
+\.metadata
 Debug/
 .launches/
 \.config

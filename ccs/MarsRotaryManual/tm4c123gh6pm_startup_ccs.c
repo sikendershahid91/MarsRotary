@@ -42,6 +42,7 @@ static void IntDefaultHandler(void);
 //*****************************************************************************
 extern void _c_int00(void);
 extern void UART_INTERRUPT_HANDLER(void);
+extern void MPU6050_I2C_INTERRUPT_HANDLER(void);
 
 //*****************************************************************************
 //
@@ -153,7 +154,7 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     0,                                      // Reserved
     IntDefaultHandler,                      // I2C2 Master and Slave
-    IntDefaultHandler,                      // I2C3 Master and Slave
+    MPU6050_I2C_INTERRUPT_HANDLER,                      // I2C3 Master and Slave
     IntDefaultHandler,                      // Timer 4 subtimer A
     IntDefaultHandler,                      // Timer 4 subtimer B
     0,                                      // Reserved

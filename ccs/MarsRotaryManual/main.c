@@ -15,9 +15,38 @@
 #include "driverlib/uart.h"
 #include "utils/uartstdio.h"
 #include "string.h"
-
+#include "sensorlib/i2cm_drv.h"
+#include "sensorlib/hw_mpu6050.h"
+#include "sensorlib/mpu6050.h"
 #include "Reorientation.h"
 
+///////////////////////////////////////
+#define MPU6050_I2C_ADDRESS 0x68
+tI2CMInstance g_sI2CInst;
+tMPU6050 g_sMPU6050Inst;
+volatile unsigned long g_vui8DataFlag;
+volatile unsigned long g_vui8ErrorFlag;
+
+
+void MPU6050_APP_CALL_BACK(void *pvCallBackData, uint_fast8_t ui8Status){
+    if(ui8Status == I2CM_STATUS_SUCCESS){
+        g_vui8DataFlag = 1;
+    }
+    g_vui8ErrorFlag = ui8Status;
+}
+
+void MPU6050_I2C_INTERRUPT_HANDLER(void){
+    I2CMIntHandler(&g_sI2CInst);
+}
+
+void MPU6050_APP_I2C_WAIT(char *pcFilename, uint_fast32_t ui32Line){
+    while((g_vui8DataFlag == 0) && (g_vui8ErrorFlag ==0)){}
+    if(g_vui8ErrorFlag){
+        UARTprintf("Error in I2C data");
+    }
+    g_vui8ErrorFlag = 0;
+}
+///////////////////////////////////////
 void I2C_RECEIVE(){
 
 }
@@ -56,8 +85,36 @@ void UART_INIT(){
 }
 
 int main(void) {
-    int a = foo(4);
+    uint_fast16_t f_gyroX;
+    uint_fast16_t  f_gyroY;
+    uint_fast16_t  f_gyroZ;
+    uint8_t ui8Mask;
     SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
     UART_INIT();
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C3);
+    GPIOPinConfigure(GPIO_PD0_I2C3SCL);
+    GPIOPinConfigure(GPIO_PD1_I2C3SDA);
+    GPIOPinTypeI2CSCL(GPIO_PORTD_BASE, GPIO_PIN_0);
+    GPIOPinTypeI2C(GPIO_PORTD_BASE, GPIO_PIN_1);
+    IntMasterEnable();
+    I2CMInit(&g_sI2CInst, I2C3_BASE, INT_I2C3, 0xFF, 0xFF, SysCtlClockGet());
+    SysCtlDelay(SysCtlClockGet() / 3);
+    MPU6050Init(&g_sMPU6050Inst, &g_sI2CInst, MPU6050_I2C_ADDRESS,MPU6050_APP_CALL_BACK,&g_sMPU6050Inst);
+    MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
+    ui8Mask = 0;
+    MPU6050ReadModifyWrite(&g_sMPU6050Inst, MPU6050_O_PWR_MGMT_1, ~ui8Mask, 0,MPU6050_APP_CALL_BACK,&g_sMPU6050Inst);
+    MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
+
+    while(1){
+        MPU6050DataRead(&g_sMPU6050Inst, MPU6050_APP_CALL_BACK, &g_sMPU6050Inst);
+        MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
+        MPU6050DataGyroGetRaw(&g_sMPU6050Inst, &f_gyroX,
+                                                 &f_gyroY,
+                                                 &f_gyroZ);
+        UARTprintf("x value %u , y value %u, z value %u", f_gyroX, f_gyroY, f_gyroZ);
+
+    }
+
     return 0;
 }

@@ -31,6 +31,31 @@
 			<locationURI>TIVAWARE_INSTALL/driverlib/ccs/Debug/driverlib.lib</locationURI>
 		</link>
 		<link>
+			<name>hw_mpu6050.h</name>
+			<type>1</type>
+			<locationURI>TIVAWARE_INSTALL/sensorlib/hw_mpu6050.h</locationURI>
+		</link>
+		<link>
+			<name>i2cm_drv.c</name>
+			<type>1</type>
+			<locationURI>TIVAWARE_INSTALL/sensorlib/i2cm_drv.c</locationURI>
+		</link>
+		<link>
+			<name>i2cm_drv.h</name>
+			<type>1</type>
+			<locationURI>TIVAWARE_INSTALL/sensorlib/i2cm_drv.h</locationURI>
+		</link>
+		<link>
+			<name>mpu6050.c</name>
+			<type>1</type>
+			<locationURI>TIVAWARE_INSTALL/sensorlib/mpu6050.c</locationURI>
+		</link>
+		<link>
+			<name>mpu6050.h</name>
+			<type>1</type>
+			<locationURI>TIVAWARE_INSTALL/sensorlib/mpu6050.h</locationURI>
+		</link>
+		<link>
 			<name>uartstdio.c</name>
 			<type>1</type>
 			<locationURI>TIVAWARE_INSTALL/utils/uartstdio.c</locationURI>

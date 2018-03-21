@@ -15,9 +15,13 @@ Tuesday-3/13 - [x] - setup makefile for gtest - sikender - Tuesday-3/13
 Wednesday-3/21-[ ] - data acquistion from gyroscope - ? - ?
 Wednesday-3/21-[ ] - data acquistion from LIDAR  - ? - ?
 Wednesday-3/21-[ ] - upload motor control interface - Alamin - ?
-Wednesday-3/21-[ ] - 
 
 ++++++++++++++-[ ] - power distribution - ? - ? 
+++++++++++++++-[ ] - processing algorithms - ? - ? 
 
+Tuesday-4/3	 - [ ] - Due: oral presentation 3
+Tuesday-4/10 - [ ] - Due: written report 3
+Thursday-4/26- [ ] - Due: oral presentation 4
+Thursday-4/26- [ ] - Due: written report 4 
 
-=====> days left: 40 <======
+=====> days left: 39 <======

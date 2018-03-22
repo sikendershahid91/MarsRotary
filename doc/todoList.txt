@@ -13,8 +13,8 @@ Tuesday-3/13 - [x] - correct repo - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - update design struct in doc/ - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - setup makefile for gtest - sikender - Tuesday-3/13
 Wednesday-3/21-[ ] - data acquistion from gyroscope - ? - ?
-Wednesday-3/21-[ ] - data acquistion from LIDAR  - Aditi - Alamin
-Wednesday-3/21-[ ] - upload motor control interface - Alamin - ?
+Thursday-3/22-[ ] - data acquistion from LIDAR  - Aditi - Alamin (document the process and setup)
+Thursday-3/26-[ ] - implement within a ros node to get the data from the lidar  - Aditi - Alamin 
 Tuesday-3/27-[ ] - screw down and fix all the joints with the pipe configuration - Alamin 
 Thursday-3/29-[ ] - upload motor control interface - Alamin (impliment with our prototype)
 

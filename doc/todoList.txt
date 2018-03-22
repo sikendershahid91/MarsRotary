@@ -13,10 +13,10 @@ Tuesday-3/13 - [x] - correct repo - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - update design struct in doc/ - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - setup makefile for gtest - sikender - Tuesday-3/13
 Wednesday-3/21-[ ] - data acquistion from gyroscope - ? - ?
-Wednesday-3/21-[ ] - data acquistion from LIDAR  - ? - ?
+Wednesday-3/21-[ ] - data acquistion from LIDAR  - Aditi - Alamin
 Wednesday-3/21-[ ] - upload motor control interface - Alamin - ?
 
-++++++++++++++-[ ] - power distribution - ? - ? 
+++++++++++++++-[ ] - power distribution - Aditi - ? 
 ++++++++++++++-[ ] - processing algorithms - ? - ? 
 
 Tuesday-4/3	 - [ ] - Due: oral presentation 3

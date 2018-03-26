@@ -21,6 +21,7 @@ Tuesday-3/27 - [ ] - screw down and fix all the joints with the pipe configurati
 Sunday-3/26  - [ ] - write the processing algorithm using gyroscope - sikender - Monday-3/27
 Sunday-3/26  - [ ] - write up test cases for processing algorithm - sikender- Monday-3/27
 Sunday-3/26  - [ ] - setup status reports on the bluetooth interface - sikender - Monday-3/27 
+Monday-4/2   - [ ] - Due: intellectual property study + standards 	
 
 
 ++++++++++++++-[+] - power distribution - Aditi - ? 

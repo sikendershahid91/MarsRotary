@@ -15,12 +15,12 @@ Tuesday-3/13 - [x] - setup makefile for gtest - sikender - Tuesday-3/13
 Wednesday-3/21-[x] - data acquistion from gyroscope - sikender - Friday-3/23
 Wednesday-3/21-[x] - data acquistion from LIDAR  - Aditi - Thursday-3/22  
 Wednesday-3/21-[x] - upload bluetooth and motion control interface - Alamin - Wednesday-3/29
-Thursday-2/22- [ ] - document the process and setup with lidar - Aditi/Alamin - ?
+Thursday-3/22- [ ] - document the process and setup with lidar - Aditi/Alamin - ?
 Thursday-3/26- [ ] - implement within a ros node to get the data from the lidar  - Aditi/Alamin - ? 
 Tuesday-3/27 - [ ] - screw down and fix all the joints with the pipe configuration - Alamin - ? 
-Sunday-3/26  - [ ] - write the processing algorithm using gyroscope - sikender - Monday-3/27
-Sunday-3/26  - [ ] - write up test cases for processing algorithm - sikender- Monday-3/27
-Sunday-3/26  - [ ] - setup status reports on the bluetooth interface - sikender - Monday-3/27 
+Sunday-3/25  - [ ] - write the processing algorithm using gyroscope - sikender - Monday-3/26
+Sunday-3/25  - [ ] - write up test cases for processing algorithm - sikender- Monday-3/26
+Sunday-3/25  - [ ] - setup status reports on the bluetooth interface - sikender - Monday-3/26
 Monday-4/2   - [ ] - Due: intellectual property study + standards 	
 
 

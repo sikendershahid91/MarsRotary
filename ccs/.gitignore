@@ -1,10 +1,16 @@
 #ignoring the following files
-*.metadata
-*.jxbrowser-data
-*.launches
-\.metadata
-Debug/
-.launches/
-\.config
-\.launches
-.xdchelp
+#linux
+**/.metadata/
+**/.jxbrowser-data/
+**/.config/
+**/.project
+**/.xdchelp
+**/Debug/
+
+#windows
+**\.metadata\
+**\.jxbrowser-data\
+**\.config\
+**\.project
+**\.xdchelp
+**\Debug\

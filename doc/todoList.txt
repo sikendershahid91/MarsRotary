@@ -12,13 +12,15 @@ Saturday-3/10- [x] - get gtesting working within ccs - sikender - Sunday-3/11
 Tuesday-3/13 - [x] - correct repo - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - update design struct in doc/ - sikender - Tuesday-3/13
 Tuesday-3/13 - [x] - setup makefile for gtest - sikender - Tuesday-3/13
-Wednesday-3/21-[ ] - data acquistion from gyroscope - sikender - Friday-3/23
+Wednesday-3/21-[x] - data acquistion from gyroscope - sikender - Friday-3/23
 Wednesday-3/21-[x] - data acquistion from LIDAR  - Aditi - Thursday-3/22  
 Wednesday-3/21-[x] - upload bluetooth and motion control interface - Alamin - Wednesday-3/29
 Thursday-2/22- [ ] - document the process and setup with lidar - Aditi/Alamin - ?
 Thursday-3/26- [ ] - implement within a ros node to get the data from the lidar  - Aditi/Alamin - ? 
 Tuesday-3/27 - [ ] - screw down and fix all the joints with the pipe configuration - Alamin - ? 
-
+Sunday-3/26  - [ ] - write the processing algorithm using gyroscope - sikender - Monday-3/27
+Sunday-3/26  - [ ] - write up test cases for processing algorithm - sikender- Monday-3/27
+Sunday-3/26  - [ ] - setup status reports on the bluetooth interface - sikender - Monday-3/27 
 
 
 ++++++++++++++-[+] - power distribution - Aditi - ? 
@@ -29,4 +31,4 @@ Tuesday-4/10 - [ ] - Due: written report 3
 Thursday-4/26- [ ] - Due: oral presentation 4
 Thursday-4/26- [ ] - Due: written report 4 
 
-=====> days left: 38 <======
+=====> days left: 36 <======

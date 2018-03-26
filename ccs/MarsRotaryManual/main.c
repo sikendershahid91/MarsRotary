@@ -88,9 +88,13 @@ int main(void) {
     uint_fast16_t f_gyroX;
     uint_fast16_t  f_gyroY;
     uint_fast16_t  f_gyroZ;
+
     uint8_t ui8Mask;
+    uint_fast8_t ui8_Transceiver = 0xFF;
+    uint_fast8_t ui8_Receiver = 0xFF;
     SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
     UART_INIT();
+
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_I2C3);
     GPIOPinConfigure(GPIO_PD0_I2C3SCL);
@@ -98,21 +102,24 @@ int main(void) {
     GPIOPinTypeI2CSCL(GPIO_PORTD_BASE, GPIO_PIN_0);
     GPIOPinTypeI2C(GPIO_PORTD_BASE, GPIO_PIN_1);
     IntMasterEnable();
-    I2CMInit(&g_sI2CInst, I2C3_BASE, INT_I2C3, 0xFF, 0xFF, SysCtlClockGet());
+
+    I2CMInit(&g_sI2CInst, I2C3_BASE, INT_I2C3, ui8_Transceiver, ui8_Receiver, SysCtlClockGet());
     SysCtlDelay(SysCtlClockGet() / 3);
-    MPU6050Init(&g_sMPU6050Inst, &g_sI2CInst, MPU6050_I2C_ADDRESS,MPU6050_APP_CALL_BACK,&g_sMPU6050Inst);
+    MPU6050Init(&g_sMPU6050Inst, &g_sI2CInst, MPU6050_I2C_ADDRESS,MPU6050_APP_CALL_BACK,NULL);
     MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
     ui8Mask = 0;
-    MPU6050ReadModifyWrite(&g_sMPU6050Inst, MPU6050_O_PWR_MGMT_1, ~ui8Mask, 0,MPU6050_APP_CALL_BACK,&g_sMPU6050Inst);
+    MPU6050ReadModifyWrite(&g_sMPU6050Inst, MPU6050_O_PWR_MGMT_1, 0, 1,MPU6050_APP_CALL_BACK,NULL);
     MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
 
     while(1){
-        MPU6050DataRead(&g_sMPU6050Inst, MPU6050_APP_CALL_BACK, &g_sMPU6050Inst);
+        MPU6050DataRead(&g_sMPU6050Inst, MPU6050_APP_CALL_BACK, NULL);
         MPU6050_APP_I2C_WAIT(__FILE__, __LINE__);
         MPU6050DataGyroGetRaw(&g_sMPU6050Inst, &f_gyroX,
                                                  &f_gyroY,
                                                  &f_gyroZ);
-        UARTprintf("x value %u , y value %u, z value %u", f_gyroX, f_gyroY, f_gyroZ);
+        UARTprintf("x value %u , y value %u, z value %u \n", f_gyroX, f_gyroY, f_gyroZ);
+        UARTprintf(" transceiver-> %u\n", ui8_Transceiver);
+        UARTprintf(" receiver----> %u\n", ui8_Receiver);
 
     }
 
